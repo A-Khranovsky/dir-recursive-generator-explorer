@@ -4,16 +4,16 @@ namespace App;
 
 class MyDirExplorer
 {
-    private $fileInfo, $ext;
+    private $fileInfo, $extension;
 
-    public function __construct($fileInfo = ['condition' => '>', 'value' => 0], $ext = '*')
+    public function __construct($fileInfo = ['condition' => '>', 'value' => 0], $extension = '*')
     {
         if(is_null($fileInfo)){
             $this->fileInfo = ['condition' => '>', 'value' => 0];
         } else {
             $this->fileInfo = $fileInfo;
         }
-        $this->ext = $ext;
+        $this->extension = $extension;
     }
 
     public function explore($dir, &$depth = 0)
@@ -51,7 +51,7 @@ class MyDirExplorer
             )
             &&
             (
-                $this->ext == '*' ? true : $this->ext == $extension
+                $this->extension == '*' ? true : $this->extension == $extension
             )
         );
     }
