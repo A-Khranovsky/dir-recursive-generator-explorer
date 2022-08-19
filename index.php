@@ -17,7 +17,6 @@ use App\MyDirExplorer;
 
 $dir = new MyDirExplorer('*', ['condition' => '<', 'value' => 100]);
 
-foreach ($dir->explore(__DIR__) as $item)
-{
-    echo str_repeat('&nbsp&nbsp&nbsp&nbsp',$item['depth']) . $item['value'] . '<br />';
+foreach ($dir->explore(__DIR__) as $item) {
+    echo str_repeat('&nbsp&nbsp&nbsp&nbsp', $item['depth']) . $item['value'] . '<br />';
 }
