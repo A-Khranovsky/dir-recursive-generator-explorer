@@ -6,13 +6,9 @@ class MyDirExplorer
 {
     private $fileInfo, $extension;
 
-    public function __construct($fileInfo = ['condition' => '>', 'value' => 0], $extension = '*')
+    public function __construct($extension = '*', $fileInfo = ['condition' => '>', 'value' => 0])
     {
-        if(is_null($fileInfo)){
-            $this->fileInfo = ['condition' => '>', 'value' => 0];
-        } else {
-            $this->fileInfo = $fileInfo;
-        }
+        $this->fileInfo = $fileInfo;
         $this->extension = $extension;
     }
 
